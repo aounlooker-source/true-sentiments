@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+
+# Local source workbooks and temporary Excel lock files are data inputs.
+*.xlsx
+~$*
+
+# Local scratch exports.
+negative1.png
+negative2.png
+
+# Keep generated report HTML/PNG/PPTX, but ignore generated analysis workbooks.
+outputs/*.xlsx

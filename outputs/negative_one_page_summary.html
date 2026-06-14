@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<title>Negative One Page Summary - True AF 2026</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; background:#111; font-family:Tahoma, Arial, sans-serif; }
+  .page {
+    width:1600px; height:900px; overflow:hidden; color:#171717; background:#f7f7f7;
+    border:10px solid #050505; position:relative;
+  }
+  .hero {
+    height:116px; color:#fff; padding:15px 26px 12px 28px; position:relative;
+    background:
+      linear-gradient(90deg, rgba(0,0,0,.95), rgba(88,0,0,.86) 48%, rgba(214,0,30,.68)),
+      linear-gradient(160deg, #050505 0%, #360006 52%, #b2001b 100%);
+  }
+  .hero::after {
+    content:""; position:absolute; inset:0 0 auto auto; width:660px; height:116px;
+    background:repeating-linear-gradient(86deg, rgba(255,255,255,.18) 0 2px, transparent 2px 36px);
+    opacity:.23;
+  }
+  .brand { display:flex; gap:22px; align-items:center; position:relative; z-index:1; }
+  .logo { font-size:46px; line-height:.9; color:#e60012; font-weight:900; letter-spacing:0; }
+  .logo span { display:block; color:#fff; font-size:15px; font-weight:700; margin-left:4px; }
+  h1 { margin:0; font-size:31px; line-height:1.12; letter-spacing:0; }
+  .sub { margin-top:7px; font-size:16px; color:#ffdce0; font-weight:700; }
+  .date { position:absolute; right:28px; top:18px; z-index:2; font-size:18px; font-weight:800; }
+  .strip {
+    height:30px; display:flex; align-items:center; gap:22px; padding:0 30px;
+    background:#c60018; color:#fff; font-size:16px; font-weight:800;
+  }
+  .grid { display:grid; gap:10px; padding:10px 12px 0; }
+  .top { grid-template-columns:1.35fr repeat(4, .78fr); height:164px; }
+  .middle { grid-template-columns:.9fr 1.02fr 1.28fr 1.5fr; height:300px; }
+  .bottom { grid-template-columns:1.45fr 1fr; height:246px; padding-bottom:10px; }
+  .panel {
+    background:#fff; border:2px solid #151515; border-radius:10px; padding:13px 14px;
+    box-shadow:0 2px 0 rgba(0,0,0,.1); overflow:hidden;
+  }
+  .panel h2 { margin:0 0 8px; color:#c60018; font-size:20px; line-height:1.1; }
+  .panel h3 { margin:0 0 8px; color:#222; font-size:16px; }
+  .summary ul { margin:4px 0 0 18px; padding:0; font-size:14px; line-height:1.3; }
+  .summary li { margin:2px 0; }
+  .kpi { display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; }
+  .kpi .icon { width:56px; height:56px; border-radius:14px; background:#d80019; color:white; display:grid; place-items:center; font-size:30px; margin-bottom:5px; }
+  .kpi .label { font-size:15px; font-weight:900; color:#111; }
+  .kpi .value { font-size:42px; font-weight:900; color:#d80019; line-height:1; margin-top:6px; }
+  .kpi .note { color:#333; font-size:14px; font-weight:800; margin-top:5px; }
+  .peak-card { background:radial-gradient(circle at 30% 15%, #ff5a64 0, #ba0018 44%, #60000c 100%); color:#fff; border-color:#ff8290; }
+  .peak-card .value, .peak-card .note { color:#ffd84a; }
+  .donut-wrap { display:flex; align-items:center; justify-content:center; gap:18px; height:202px; }
+  .donut {
+    width:156px; height:156px; border-radius:50%;
+    background:conic-gradient(#e60012 0 88.7%, #ffb400 88.7% 95%, #28b36d 95% 100%);
+    display:grid; place-items:center;
+  }
+  .donut::before { content:""; width:78px; height:78px; border-radius:50%; background:#fff; box-shadow:inset 0 0 0 18px #fff; }
+  .legend { display:grid; gap:12px; font-size:15px; font-weight:800; }
+  .dot { display:inline-block; width:14px; height:14px; border-radius:50%; margin-right:7px; vertical-align:middle; }
+  .meter { margin-top:10px; display:grid; gap:9px; }
+  .meter-row { display:grid; grid-template-columns:132px 1fr 48px; align-items:center; gap:8px; font-size:14px; font-weight:800; }
+  .meter-track { height:12px; background:#eceff3; border-radius:999px; overflow:hidden; }
+  .meter-fill { height:100%; background:#d80019; border-radius:999px; }
+  .bar-row { display:grid; grid-template-columns:26px 156px 1fr 52px; gap:8px; align-items:center; margin:7px 0; font-size:15px; }
+  .rank { width:24px; height:24px; border-radius:50%; background:#d80019; color:#fff; display:grid; place-items:center; font-weight:900; }
+  .bar-label { font-weight:800; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .bar-track { height:18px; background:#edf0f3; border-radius:999px; overflow:hidden; }
+  .bar-fill { height:100%; border-radius:999px; }
+  .bar-value { text-align:right; font-weight:900; color:#c60018; }
+  .axis { font:12px Tahoma, Arial; fill:#333; font-weight:700; }
+  .grid { stroke:#e5e7eb; stroke-width:1; }
+  .peak { font:700 15px Tahoma, Arial; fill:#d80019; }
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  th { text-align:left; background:#111827; color:#fff; padding:5px 6px; }
+  td { border-bottom:1px solid #e5e7eb; padding:5px 6px; vertical-align:top; }
+  .hot { color:#d80019; font-weight:900; }
+  .quotes { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
+  .quote-card { border:1px solid #d8dde6; border-left:7px solid #d80019; border-radius:8px; padding:8px 10px; min-height:78px; }
+  .quote-card b { color:#d80019; font-size:14px; }
+  .quote-card p { margin:4px 0 0; font-size:12.3px; line-height:1.28; }
+  .actions { display:grid; grid-template-columns:38px 1fr; gap:9px; align-items:center; margin-top:8px; font-size:16px; }
+  .num { width:34px; height:34px; border-radius:50%; background:#d80019; color:white; display:grid; place-items:center; font-weight:900; font-size:18px; }
+  .footer { position:absolute; left:20px; right:20px; bottom:6px; color:#fff; font-size:12px; display:flex; justify-content:space-between; opacity:.9; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="hero">
+    <div class="brand">
+      <div class="logo">true<span>together</span></div>
+      <div>
+        <h1>รายงานสรุปสถานการณ์: Negative Feedback<br>True Academy Fantasia 2026</h1>
+        <div class="sub">หัวข้อหลัก: ไม่มีซิม True / ดู AF ไม่ได้ / ช่องทางรับชมเข้าถึงยาก</div>
+      </div>
+    </div>
+    <div class="date">13-14 มิถุนายน 2569</div>
+  </div>
+  <div class="strip">
+    <span>Social Listening: Facebook, X, IG, TikTok, YouTube</span>
+    <span>Data period: 1-14 June 2026</span>
+    <span>Negative One Page Summary</span>
+  </div>
+
+  <div class="grid top">
+    <div class="panel summary">
+      <h2>Executive Summary</h2>
+      <ul>
+        <li>Negative ที่เกี่ยวข้องมี <b>115</b> mentions จากทั้งหมด 3,731 mentions (3.1% ของข้อมูลรวม)</li>
+        <li>ปัญหาหลักไม่ใช่ตัวรายการ แต่เป็น friction ในการรับชมคอนเสิร์ตและเงื่อนไข True/dtac</li>
+        <li>Facebook เป็นศูนย์กลางเสียงบ่นหลัก คำซ้ำมากคือ “ดูไม่ได้/ดูยาก/ต้องใช้”</li>
+      </ul>
+    </div>
+    <div class="panel kpi">
+      <div class="icon">!</div>
+      <div class="label">Relevant Negative</div>
+      <div class="value">115</div>
+      <div class="note">mentions</div>
+    </div>
+    <div class="panel kpi">
+      <div class="icon">☹</div>
+      <div class="label">Access Issue</div>
+      <div class="value">95%</div>
+      <div class="note">109 mentions</div>
+    </div>
+    <div class="panel kpi">
+      <div class="icon">f</div>
+      <div class="label">Platform สูงสุด</div>
+      <div class="value">89%</div>
+      <div class="note">Facebook: 102 mentions</div>
+    </div>
+    <div class="panel kpi peak-card">
+      <div class="icon">⏱</div>
+      <div class="label">Peak Time</div>
+      <div class="value">20:00</div>
+      <div class="note">วันที่ 13/06/2026</div>
+    </div>
+  </div>
+
+  <div class="grid middle">
+    <div class="panel">
+      <h2>Issue Overview</h2>
+      <div class="donut-wrap">
+        <div class="donut"></div>
+        <div class="legend">
+          <div><span class="dot" style="background:#e60012"></span>Facebook 102</div>
+          <div><span class="dot" style="background:#ffb400"></span>X 8</div>
+          <div><span class="dot" style="background:#28b36d"></span>Other 5</div>
+        </div>
+      </div>
+      <div class="meter">
+        <div class="meter-row"><span>True/package</span><div class="meter-track"><div class="meter-fill" style="width:71.3%"></div></div><b>71%</b></div>
+      </div>
+    </div>
+    <div class="panel">
+      <h2>Top Keywords</h2>
+      
+            <div class="bar-row">
+              <div class="rank">1</div>
+              <div class="bar-label">ดูไม่ได้</div>
+              <div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#d80019"></div></div>
+              <div class="bar-value">57</div>
+            </div>
+
+            <div class="bar-row">
+              <div class="rank">2</div>
+              <div class="bar-label">ดูยาก</div>
+              <div class="bar-track"><div class="bar-fill" style="width:40.4%;background:#ff6b00"></div></div>
+              <div class="bar-value">23</div>
+            </div>
+
+            <div class="bar-row">
+              <div class="rank">3</div>
+              <div class="bar-label">ไม่ดู</div>
+              <div class="bar-track"><div class="bar-fill" style="width:24.6%;background:#ffc400"></div></div>
+              <div class="bar-value">14</div>
+            </div>
+
+            <div class="bar-row">
+              <div class="rank">4</div>
+              <div class="bar-label">ไม่ได้ดู</div>
+              <div class="bar-track"><div class="bar-fill" style="width:22.8%;background:#28b36d"></div></div>
+              <div class="bar-value">13</div>
+            </div>
+
+            <div class="bar-row">
+              <div class="rank">5</div>
+              <div class="bar-label">เสียดาย</div>
+              <div class="bar-track"><div class="bar-fill" style="width:14.0%;background:#7a3fd1"></div></div>
+              <div class="bar-value">8</div>
+            </div>
+
+            <div class="bar-row">
+              <div class="rank">6</div>
+              <div class="bar-label">ผิด</div>
+              <div class="bar-track"><div class="bar-fill" style="width:12.3%;background:#d80019"></div></div>
+              <div class="bar-value">7</div>
+            </div>
+    </div>
+    <div class="panel">
+      <h2>Hot Topics</h2>
+      
+            <div class="bar-row">
+              <div class="rank">1</div>
+              <div class="bar-label">ช่องทางรับชม / ดูไม่ได้</div>
+              <div class="bar-track"><div class="bar-fill" style="width:100.0%;background:#d80019"></div></div>
+              <div class="bar-value">109</div>
+            </div>
+
+            <div class="bar-row">
+              <div class="rank">2</div>
+              <div class="bar-label">ซิม True / แพ็กเกจ</div>
+              <div class="bar-track"><div class="bar-fill" style="width:75.2%;background:#ff6b00"></div></div>
+              <div class="bar-value">82</div>
+            </div>
+
+            <div class="bar-row">
+              <div class="rank">3</div>
+              <div class="bar-label">ดูไม่ได้ / ต้องสมัคร</div>
+              <div class="bar-track"><div class="bar-fill" style="width:66.1%;background:#ffc400"></div></div>
+              <div class="bar-value">72</div>
+            </div>
+
+            <div class="bar-row">
+              <div class="rank">4</div>
+              <div class="bar-label">ถ้อยคำร้องเรียนตรง</div>
+              <div class="bar-track"><div class="bar-fill" style="width:56.9%;background:#28b36d"></div></div>
+              <div class="bar-value">62</div>
+            </div>
+      <h3 style="margin-top:14px">Amplification Accounts</h3>
+      <table><thead><tr><th>Channel</th><th>Account</th><th>Neg.</th><th>Eng.</th><th>Impact</th></tr></thead><tbody>
+        <tr>
+          <td>Facebook</td>
+          <td><strong>อวยไส้แตกแหกไส้ฉีก</strong></td>
+          <td>1</td>
+          <td>609</td>
+          <td class="hot">122</td>
+        </tr>
+        <tr>
+          <td>X</td>
+          <td><strong>mmmmintmint</strong></td>
+          <td>1</td>
+          <td>3</td>
+          <td class="hot">96</td>
+        </tr></tbody></table>
+    </div>
+    <div class="panel">
+      <h2>Timeline: Negative Mentions by Hour</h2>
+      
+    <svg viewBox="0 0 490 178" class="timeline" role="img" aria-label="Negative mentions by hour">
+      <defs>
+        <linearGradient id="areaFill" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="#d80019" stop-opacity=".34"/>
+          <stop offset="100%" stop-color="#d80019" stop-opacity=".03"/>
+        </linearGradient>
+      </defs>
+      <line x1="38" y1="20.0" x2="472" y2="20.0" class="grid"/>
+<line x1="38" y1="51.5" x2="472" y2="51.5" class="grid"/>
+<line x1="38" y1="83.0" x2="472" y2="83.0" class="grid"/>
+<line x1="38" y1="114.5" x2="472" y2="114.5" class="grid"/>
+<line x1="38" y1="146.0" x2="472" y2="146.0" class="grid"/>
+      <polygon points="38.0,143.0 124.8,146.0 211.6,20.0 298.4,107.0 385.2,119.0 472.0,134.0 472.0,146.0 38.0,146.0" fill="url(#areaFill)"/>
+      <polyline points="38.0,143.0 124.8,146.0 211.6,20.0 298.4,107.0 385.2,119.0 472.0,134.0" fill="none" stroke="#d80019" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+      <circle cx="38.0" cy="143.0" r="5" fill="#d80019" stroke="#fff" stroke-width="2"/>
+<circle cx="124.8" cy="146.0" r="5" fill="#d80019" stroke="#fff" stroke-width="2"/>
+<circle cx="211.6" cy="20.0" r="5" fill="#d80019" stroke="#fff" stroke-width="2"/>
+<circle cx="298.4" cy="107.0" r="5" fill="#d80019" stroke="#fff" stroke-width="2"/>
+<circle cx="385.2" cy="119.0" r="5" fill="#d80019" stroke="#fff" stroke-width="2"/>
+<circle cx="472.0" cy="134.0" r="5" fill="#d80019" stroke="#fff" stroke-width="2"/>
+      <text x="38.0" y="168" text-anchor="middle" class="axis">18:00</text>
+<text x="124.8" y="168" text-anchor="middle" class="axis">19:00</text>
+<text x="211.6" y="168" text-anchor="middle" class="axis">20:00</text>
+<text x="298.4" y="168" text-anchor="middle" class="axis">21:00</text>
+<text x="385.2" y="168" text-anchor="middle" class="axis">22:00</text>
+<text x="472.0" y="168" text-anchor="middle" class="axis">23:00</text>
+      <text x="225.6" y="18.0" class="peak">PEAK 20:00</text>
+    </svg>
+      <h3>Interpretation</h3>
+      <p style="font-size:15px;line-height:1.42;margin:0">เสียงลบกระจุกในช่วงคอนเสิร์ต/Live โดยเฉพาะ 20:00 น. สะท้อนว่าปัญหาเกิดใน moment ที่ผู้ชมตั้งใจจะเข้าไปดูและพร้อมมีส่วนร่วม</p>
+    </div>
+  </div>
+
+  <div class="grid bottom">
+    <div class="panel">
+      <h2>Voice of Customer</h2>
+      <div class="quotes">
+        <div class="quote-card">
+          <b>อวยไส้แตกแหกไส้ฉีก</b>
+          <p>“รีวิวคอนเสิร์ตวีคแรก Academy Fantasia 2026 แบบจัดเต็ม (ฝากแชร์ให้ถึงทรูหน่อย) ปีนี้โชคดีมากที่ได้ไปชม A…”</p>
+        </div>
+        <div class="quote-card">
+          <b>Tidarat Sommat</b>
+          <p>“จริงค่ะ ในฐานะที่เป็นแฟนคลับafมานาน คือแอบเซ็ง แทนที่จะดันรายการให้ดังๆ แต่นี่ทำเหมือนกลัวรายการจะดัง ค…”</p>
+        </div>
+        <div class="quote-card">
+          <b>UNKNOWN</b>
+          <p>“ฉายช่อง 24 ฟรีทีวีด้วยก็ได้ค่าโหวตเพิ่ม คนทั่วๆปจะได้ดูด้วย ขนาดสมัครแพคเกจ 199ยังหาช่องดูยาก เปิดช่อง …”</p>
+        </div>
+        <div class="quote-card">
+          <b>Darin Kaewdee</b>
+          <p>“ไม่ได้ดูค่ะ ปีนี้หาดูยากมากเพราะเราไม่ได้ซื้อแพ็คเกจ เลยเลือกที่จะไม่ดู หาช่องทางไหนก็ดูไม่ได้เลย ต้องเ…”</p>
+        </div></div>
+    </div>
+    <div class="panel">
+      <h2>ข้อเสนอแนะสำหรับผู้บริหาร</h2>
+      <div class="actions"><div class="num">1</div><div><b>Communication Clarity</b><br>ระบุเงื่อนไข “ดูได้/ดูไม่ได้/ต้องใช้ซิมหรือแพ็กเกจใด” ให้ชัดก่อนวัน Live</div></div>
+      <div class="actions"><div class="num">2</div><div><b>UX/UI Optimization</b><br>ทำทางเข้า TrueVisions Now ให้ตรงและง่ายช่วง peak hour พร้อมข้อความช่วยเหลือ</div></div>
+      <div class="actions"><div class="num">3</div><div><b>Support Escalation</b><br>ตั้ง war room real-time สำหรับปัญหา login, package, telco condition และ refund case</div></div>
+    </div>
+  </div>
+  <div class="footer"><span>Source: Social Listening Dashboard | Generated from true_af_nlp_dashboard.html data model</span><span class="logo" style="font-size:26px">true</span></div>
+</div>
+</body>
+</html>
